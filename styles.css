@@ -1,0 +1,181 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: #000; /* Black background */
+    color: #f8f8f8; /* Light text color for contrast */
+}
+
+/* Main Container Styling */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #333; /* Dark background for the container */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    animation: fadeIn 0.5s ease;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center;
+    color: #f8c71c; /* Yellow color for the header */
+    margin-bottom: 20px;
+}
+
+/* Personal Details Styling */
+.personal-details {
+    margin-bottom: 20px;
+}
+
+.personal-details label {
+    display: block;
+    margin-top: 10px;
+    color: #f8c71c; /* Yellow color for labels */
+}
+
+.personal-details input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #222;
+    color: #f8f8f8;
+    margin-bottom: 10px;
+}
+
+/* Semester Grid Layout */
+.semester-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Semester Styling */
+.semester {
+    background-color: #444; /* Darker background for each semester */
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.semester h2 {
+    color: #f8c71c; /* Yellow color for semester titles */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+thead th {
+    background-color: #f8c71c; /* Yellow background for table header */
+    color: #000; /* Black text for header */
+    padding: 10px;
+    border: 1px solid #666;
+}
+
+tbody td {
+    padding: 10px;
+    border: 1px solid #666;
+}
+
+.course input, .course select {
+    padding: 8px;
+    width: calc(100% - 16px); /* Ensure inputs do not overflow */
+    border: 1px solid #666;
+    border-radius: 4px;
+    background-color: #222;
+    color: #f8f8f8;
+    transition: box-shadow 0.3s;
+}
+
+.course input:focus, .course select:focus {
+    box-shadow: 0 0 5px rgba(248, 199, 28, 0.5);
+}
+
+/* Buttons Styling */
+button {
+    padding: 10px;
+    background-color: #f8c71c;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #f9d04f;
+}
+
+/* Actions and Results Styling */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.cgpa-result {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #f8c71c; /* Yellow color for CGPA result */
+}
+
+/* Semester GPA Styling */
+.semester-gpa {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+    color: #f8c71c; /* Yellow color for SGPA */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    table, tbody, td, th {
+        display: block;
+        width: 100%;
+    }
+
+    .course {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .course input, .course select {
+        width: 100%;
+    }
+}

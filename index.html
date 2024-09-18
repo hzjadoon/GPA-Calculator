@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>CGPA Calculator</h1>
+        <div class="personal-details">
+            <label for="name">Name:</label>
+            <input type="text" id="name" placeholder="Your Name">
+            <label for="regNo">Reg No:</label>
+            <input type="text" id="regNo" placeholder="Registration Number">
+            <label for="fatherName">Father's Name:</label>
+            <input type="text" id="fatherName" placeholder="Father's Name">
+        </div>
+        <form id="cgpaForm">
+            <div id="semesters">
+                <div class="semester" id="semester-1">
+                    <h2>Semester 1</h2>
+                    <input type="text" class="semester-name" placeholder="Semester Name e.g. Fall 2024">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Serial No.</th>
+                                <th>Course Name</th>
+                                <th>Credit Hours</th>
+                                <th>Grades</th>
+                            </tr>
+                        </thead>
+                        <tbody class="courses">
+                            <tr class="course">
+                                <td>1</td>
+                                <td><input type="text" class="subject-name" required></td>
+                                <td><input type="number" class="credit-hours" required></td>
+                                <td>
+                                    <select class="grade">
+                                        <option value="4.00">A</option>
+                                        <option value="3.67">A-</option>
+                                        <option value="3.33">B+</option>
+                                        <option value="3.00">B</option>
+                                        <option value="2.67">B-</option>
+                                        <option value="2.33">C+</option>
+                                        <option value="2.00">C</option>
+                                        <option value="1.67">C-</option>
+                                        <option value="1.33">D+</option>
+                                        <option value="1.00">D</option>
+                                        <option value="0.00">F</option>
+                                    </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="add-course-btn" onclick="addCourse('semester-1')">Add Subject</button>
+                    <div class="semester-gpa">SGPA: <span>0.00</span></div>
+                </div>
+            </div>
+            <div class="actions">
+                <button type="button" onclick="addSemester()">Add Next Semester</button>
+                <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+                <button type="button" onclick="resetForm()">Reset</button>
+                <button type="button" onclick="downloadPDF()">Download Transcript</button>
+            </div>
+            <div id="cgpaResult">CGPA: 0.00</div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
